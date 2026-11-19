@@ -29,6 +29,13 @@ public class Todo {
 
     protected Todo() {}
 
+    public Todo(String content, boolean completed) {
+        this.content = content;
+        this.completed = completed;
+        this.createdAt = Instant.now();
+        this.updatedAt = createdAt;
+    }
+
     public Long getId() { return id; }
 
     public String getContent() { return content; }
