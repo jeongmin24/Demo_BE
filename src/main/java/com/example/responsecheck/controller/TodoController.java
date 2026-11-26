@@ -24,6 +24,11 @@ public class TodoController {
             demoTodo(-8, "하루를 마무리하며\n오늘 잘한 일 하나 기록하기", false)
     );
 
+    @GetMapping
+    public List<TodoDetail> listTodos() {
+        return DEMO_TODOS;
+    }
+
     @GetMapping("/detail/{postNum}")
     public ResponseEntity<TodoDetail> getDetail(@PathVariable("postNum") int postNum) {
         if (postNum < 0 || postNum >= DEMO_TODOS.size()) {
